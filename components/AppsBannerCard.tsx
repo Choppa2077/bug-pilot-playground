@@ -1,39 +1,29 @@
-import React from "react";
-
-interface AppsBannerCardProps {
-  title: string;
-  subtitle: string;
-  onTryPress: () => void;
-}
-
-export function AppsBannerCard({ title, subtitle, onTryPress }: AppsBannerCardProps) {
+export default function AppsBannerCard() {
   return (
     <div
       style={{
-        backgroundColor: "#1a1a2e",
+        backgroundColor: '#1a1a2e',
         borderRadius: 12,
         padding: 24,
-        margin: 16,
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
+        color: '#fff',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}
     >
-      <h2 style={{ color: "#ffffff", fontSize: 20, fontWeight: "bold", margin: 0 }}>{title}</h2>
-      <p style={{ color: "#aaaaaa", fontSize: 14, margin: 0 }}>{subtitle}</p>
+      <div>
+        <h2 style={{ margin: 0, color: '#ffffff' }}>Discover apps</h2>
+        <p style={{ margin: 0, color: '#a0a0b0' }}>Find new tools to try</p>
+      </div>
       <button
-        onClick={onTryPress}
         style={{
-          backgroundColor: "#ff0000",
-          color: "#ffffff",
-          border: "none",
+          backgroundColor: '#ffffff',
+          color: '#1a1a2e',
+          border: 'none',
           borderRadius: 8,
-          padding: "10px 20px",
-          fontSize: 14,
-          fontWeight: "bold",
-          cursor: "pointer",
-          alignSelf: "flex-start",
-          marginTop: 8,
+          padding: '8px 16px',
+          fontWeight: 600,
+          cursor: 'pointer',
         }}
       >
         Try
