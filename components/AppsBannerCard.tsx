@@ -1,43 +1,58 @@
-import React from "react";
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-interface AppsBannerCardProps {
+type AppsBannerCardProps = {
   title: string;
   subtitle: string;
-  onTryPress: () => void;
-}
+  onPress?: () => void;
+};
 
-export function AppsBannerCard({ title, subtitle, onTryPress }: AppsBannerCardProps) {
+export default function AppsBannerCard({ title, subtitle, onPress }: AppsBannerCardProps) {
   return (
-    <div
-      style={{
-        backgroundColor: "#1a1a2e",
-        borderRadius: 12,
-        padding: 24,
-        margin: 16,
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-      }}
-    >
-      <h2 style={{ color: "#ffffff", fontSize: 20, fontWeight: "bold", margin: 0 }}>{title}</h2>
-      <p style={{ color: "#aaaaaa", fontSize: 14, margin: 0 }}>{subtitle}</p>
-      <button
-        onClick={onTryPress}
-        style={{
-          backgroundColor: "#ff0000",
-          color: "#ffffff",
-          border: "none",
-          borderRadius: 8,
-          padding: "10px 20px",
-          fontSize: 14,
-          fontWeight: "bold",
-          cursor: "pointer",
-          alignSelf: "flex-start",
-          marginTop: 8,
-        }}
-      >
-        Try
-      </button>
-    </div>
+    <View style={styles.card}>
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
+      </View>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
+        <Text style={styles.buttonText}>Try</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#1a1a2e',
+    padding: 16,
+    borderRadius: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  textContainer: {
+    flex: 1,
+    paddingRight: 12,
+  },
+  title: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 4,
+  },
+  subtitle: {
+    color: '#9ca3af',
+    fontSize: 14,
+  },
+  button: {
+    backgroundColor: '#ffffff',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: '#1a1a2e',
+    fontWeight: '600',
+    fontSize: 14,
+  },
+});
