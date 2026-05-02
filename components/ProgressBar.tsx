@@ -22,7 +22,7 @@ export function ProgressBar({ progress, label }: ProgressBarProps) {
       >
         <div
           style={{
-            backgroundColor: "#ff0000",
+            backgroundColor: "#22c55e",
             height: "100%",
             width: `${clamped}%`,
             borderRadius: 4,
