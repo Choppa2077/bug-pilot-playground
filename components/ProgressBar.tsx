@@ -10,7 +10,7 @@ export function ProgressBar({ progress, label }: ProgressBarProps) {
   return (
     <div style={{ padding: "8px 16px" }}>
       {label && (
-        <p style={{ color: "#333333", fontSize: 12, marginBottom: 4 }}>{label}</p>
+        <p style={{ color: "#333333", fontSize: 24, fontWeight: "bold", marginBottom: 4 }}>{label}</p>
       )}
       <div
         style={{
